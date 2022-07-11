@@ -1,0 +1,121 @@
+*{box-sizing: border-box;}
+.animation_conainer{
+  border: solid #C9D9FF 10px ;
+  width: 80%;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+.main_img{
+  width: 100%;
+  animation: filt 10s;
+}
+.text{
+  font-family: cursive;
+  font-size: 300%;
+  top:0;
+  left: 2%;
+  position: absolute;
+  animation: text 8s;
+}
+.heart1,.heart2,.heart3,.heart4,.heart5,.heart6,.heart7,.heart8,.heart9,.heart10,.heart11,.heart12{
+  position: absolute;
+
+}
+.heart1,.heart2,.heart3,.heart4,.heart9{
+  animation: moveHeart1 normal 1s 5s infinite;
+}
+.heart5,.heart6,.heart7,.heart8{
+  animation: moveHeart2 normal 0.7s 5s infinite;
+}
+.heart10,.heart11,.heart12{
+  animation: moveHeart3 normal 2s 5s infinite;
+}
+
+.heart1{
+  width:15%;
+  bottom: 0;
+  right: 0;
+}
+.heart2{
+  width:5%;
+  bottom: 20%;
+  left: 5%;
+}
+.heart3{
+  width:10%;
+  bottom: 70%;
+  left: 30%;
+}
+.heart4{
+  width:20%;
+  bottom: 75%;
+  left: 60%;
+}
+.heart5{
+  width:9%;
+  bottom: 40%;
+  left: 15%;
+}
+.heart6{
+  width:14%;
+  top: 10%;
+  right: 5%;
+}
+.heart7{
+  width:12%;
+  bottom: 30%;
+  right: 12%;
+}
+.heart8{
+  width:13%;
+  top: 5%;
+  left: 5%;
+}
+.heart9{
+  width:7%;
+  bottom: 20%;
+  left: 60%;
+}
+.heart10{
+  width:20%;
+  bottom: 40%;
+  left: 2%;
+}
+.heart11{
+  width:6%;
+  bottom: 50%;
+  right: 7%;
+}
+.heart12{
+  width:5%;
+  bottom: 67%;
+  left: 18%;
+}
+@keyframes filt{
+0% {filter: blur(100px);}
+ 50% {filter: blur(0);}
+}
+@keyframes text{
+  0%, 50% {opacity:0;}
+  90%{opacity:1;}
+  100%{color: #FF6666;}
+}
+@keyframes moveHeart1{
+  0%, 100{opacity:0;}
+  50%{opacity:1;}
+  76%{opacity:0;}
+}
+@keyframes moveHeart2{
+  0%{opacity:0.8;}
+  56%{opacity:0.5;}
+  60%{opacity:1;}
+  99%{opacity:0;}
+  100%{opacity:1;}
+}
+@keyframes moveHeart3{
+  56%{opacity:0.1;}
+  60%{opacity:1;}
+  70%{opacity:0.3;}
+  100%{opacity:1;}
+}
