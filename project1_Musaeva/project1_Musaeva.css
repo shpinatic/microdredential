@@ -1,0 +1,223 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.header{
+ width: 100%;
+ height: 400px;
+ background-image: url(images/surf.jpg);
+ background-position: center;
+ background-size: cover;
+ position: relative;
+}
+nav{
+  width: 100%;
+  height: 45px;
+  background-color: black;
+  padding-left: 10px;
+}
+nav img{
+position: absolute;
+width: 50px;
+top: 0;
+  }
+nav p{
+  position: absolute;
+  left: 70px;
+  top: 15px;
+  color: white;
+  animation-name: moveText;
+  animation-duration:1.5s;
+  animation-iteration-count: 2;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+@keyframes moveText{
+  from{transform: translateX(0%);}
+  to{transform: translateX(12%);}
+}
+.text-box {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%; /*starting point from center*/
+    transform: translate(-50%, -50%); /*shift by half of the box to put it in the center*/
+    text-align: center;
+  }
+  #title{
+    font-size: 90px;
+    color: #fdd835;
+    text-shadow: 2px 2px 8px black;
+    margin: 10px 0 40px;
+  }
+  .btn {
+      text-decoration: none;
+      padding: 12px 34px;
+      background: transpatent;
+      position: relative;
+      color: white;
+      font-size: 20px;
+    }
+  .btn:hover {
+      border-radius: 20px;
+      background-color: #fdd835;
+      transition: 0.2s ease-in;
+      color: black;
+    }
+
+    /*---TEXT-BLOCK AFTER BANNER---*/
+    .text_section{
+      width: 100%;
+      text-align: center;
+      padding:80px 0 30px;
+
+    }
+    h1{
+        font-size: 36px;
+        font-weight: 100px;
+    }
+    p{
+        font-size: 16px;
+        font-weight: 60px;
+        padding: 10px;
+    }
+
+    /*---PICTURE-TEXT CONTAINERs---*/
+    .container{
+        width: 100%;
+        background-color: black;
+    }
+    .row {
+        margin: 5%;
+        display: flex;
+        justify-content: space-between;
+      }
+    .col{
+        flex-basis: 48%;
+        padding: 30px 2px ;
+
+    }
+    .col img{
+        width: 100%;
+    }
+    .col h1{
+        padding-top: 0;
+        color: white;
+
+    }
+    .col p{
+        padding: 15px 0 25px;
+        color: white;
+
+    }
+    .zoom:hover{
+    transform: scale(1.3);
+    transition:  1s ease-in-out;
+
+    }
+    #btn-bl {
+      padding: 5px 15px;
+    }
+
+  /*---TABLE WITH COST---*/
+  .table {
+    border: black;
+    margin: 20px;
+    padding: 10px 20px;
+  }
+  .table td {
+    text-align: left;
+    padding: 5px 30px;
+  }
+  .table th {
+    background-color: #fdd835;
+  }
+
+  /*---FOOTER---*/
+  .footer{
+    background-color: black;
+    color: white
+  }
+  .footer img {
+    width: 10%;
+    padding-left: 2%;
+  }
+
+/*---SUBPAGE1----*/
+.sub-header{
+ width: 100%;
+ position: relative;
+}
+
+.activity_section{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 60px;
+}
+.act-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.act-col img{
+    width: 100%;
+    display: block;
+}
+.layer{
+    background: transparent;
+    height: 100%;
+    width:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+.layer:hover{
+    background: #fdd835;
+}
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color:black;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+.layer:hover h3{
+    bottom: 49%;
+    opacity: 1;
+}
+.act-text{
+  margin: 30px;
+}
+.list {
+  width: 80%;
+  padding: 10px 50px;
+}
+.list h1{
+  padding-left: 5px;
+  background-color: #fdd835;
+}
+
+/*-----SUBPAGE2----*/
+.sub-header2{
+ width: 100%;
+ height: 400px;
+ background-image: url(images/abor.jpg);
+ background-position: center;
+ background-size: cover;
+ position: relative;
+}
