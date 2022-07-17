@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Musaeva: activity8</title>
+  </head>
+  <body>
+    <h1>Musaeva: activity8</h1>
+    <script type="text/javascript">
+      //example1)
+      function msg(){
+        console.log("Hello!");
+      }
+      //example2)
+      function printCount(){
+        for(let i=3; i>=1; i--){
+          console.log(i);
+        }
+      }
+      //example3)
+      function greeting(name){
+        console.log(`Hello ${name}`);
+      }
+      //example4)
+      function upperMessage(message){
+        let upper = message.toUpperCase();
+        console.log(upper);
+      }
+      //example5)
+      function greet(firstName, lastName){
+        console.log(`Hello ${firstName} ${lastName[0].toUpperCase()}`);
+      }
+      //example6)
+      function printMsg(message, numCount){
+        for(counter=0; counter < numCount; counter++){
+          console.log(`Counter ${counter} ${message}`);
+        }
+      }
+      //example7)
+      function sumXY(){
+        let x=7, y=-3
+        return x+y
+        console.log('HELLO WORLD');
+      }
+      //example8)
+      function isShakeEyes(dice1, dice2){
+        if(dice1===1 && dice2===1){
+          console.log('Shake Eyes!')
+        }
+        else{console.log('Not Shake Eyes!')}
+      }
+      //example9)
+      // let userNum = parseInt(prompt('Enter a number'))
+      //
+      // function doubleNumber(number){
+      //   let dNumber = number*2;
+      //   return dNumber
+      // }
+      // let collectNum = doubleNumber(userNum)
+      //example10)
+      let a =5/6, b=-3, c =9, d =-5
+
+      function sumNum(num1, num2){
+        let sum = num1+num2
+        return sum
+      }
+      let number1 = sumNum(10, d)
+      let number2 = sumNum(a, c)
+      //example 11)
+      function isShortWeather(temperature){
+        if(temperature>=75){return true;}
+        else{return false;}
+      }
+      //example 12)
+      function lastElement(arrayInput){
+        if(arrayInput === undefined){return null}
+        else if(arrayInput.length !==0){
+          let lastIndex = arrayInput.length-1;
+          return arrayInput[lastIndex]
+        }
+        else{return null}
+      }
+
+      //example13) Math function
+      // let numPI = Math.PI;
+      // console.log(`PI value = ${numPI}`);
+      // console.log(`PI with round method = ${Math.round(numPI)}`);
+      // console.log(`PI with ceil method = ${Math.ceil(numPI)}`);
+      // console.log(`PI with floor method = ${Math.floor(numPI)}`);
+      // console.log(`PI with trunc method = ${Math.trunc(numPI)}`); //returns the whole part
+      // console.log(`Power method = ${Math.pow(2, 3)}`);
+      // console.log(`Sqr method = ${Math.sqrt(85)}`);
+      // console.log(`Random method = ${Math.random()}`);
+
+      //example14)
+      //random between 10 and 20 inclusive
+      function pickNum(){
+        let pick = 10+ Math.round(Math.random()*10)
+        return pick
+      }
+      //example15)
+      // let colors =['red, green', 'blue', 'yellow', 'orange']
+      //
+      // function colorPick(lastIndex){
+      //   let pick = Math.round(Math.random()*lastIndex)
+      //   return pick
+      // }
+      // pickedIndex = colorPick(colors.length -1)
+      // console.log(`The picked color is = ${colors[pickedIndex]}`);
+
+      //Class activity 1
+
+       function checkName(){
+        let check_name = prompt('Enter a name: ')
+        let checkpoint = parseInt(check_name);
+        while(!(isNaN(checkpoint))){
+
+          check_name = prompt(`${check_name} is invalid! Enter a name again:`)
+          checkpoint = parseInt(check_name);
+       }
+        if(check_name.length < 1){
+          check_name = prompt("You forgot to enter a name. Enter a name again:")
+        }
+        else{
+          console.log(`Welcome ${check_name.toUpperCase()} to the class!`);
+       }
+       }
+       checkName();
+
+      //Class activity 2
+      function checkNum(){
+        let inputNum = parseInt(prompt('Enter a number'))
+        while(isNaN(inputNum)){
+            inputNum = parseInt(prompt(`${inputNum} is not a number. Enter a number again`))
+        }
+        if(inputNum % 2 === 0){
+          return true;
+        }
+        else{
+          return false;
+      }
+    }
+
+    //Class activity 3
+    function lottery(lotteryInput){
+      for(let i = 1; i <= lotteryInput; i++){
+        console.log(`Ticket number ${i}: `);
+        for(let j = 1; j <= 5; j++){
+          console.log(`${Math.round(Math.random()*99)} `);
+        }
+      }
+    }
+
+
+    </script>
+
+  </body>
+</html>
