@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Activity 9: Musaeva</title>
+  </head>
+  <body>
+    <h1>Activity 9: Musaeva</h1>
+    <script type="text/javascript">
+      //example 1)
+      let msg = 'This is an outside message'
+      function displayMsg(){
+         msg = 'Hello World! I am inside of a function'
+        console.log(msg);
+      }
+      console.log(msg);
+
+      //example 1.b)
+      let msg1 = 'This is a global variable'
+      function displayMsg1(){
+        console.log(`function message ${msg1}`);
+      }
+      console.log(`After function ${msg1}`);
+
+      //example 2) disadvantage of var
+      var fullMoon = true;
+      var species = 'human' //global variable
+      if(fullMoon){
+        var species = "werewolf" // local variable
+        console.log(`Lupin is a currently a ${species}`);
+      }
+      console.log(`Lupin is outside the if-statement`);
+
+      //example 3) save function into variable
+      const sum = function(num1, num2){
+        return num1+num2
+      }
+
+      //example 3b)
+      console.log('example 3b');
+      let square = function(num){
+        return Math.pow(num,2)
+      }
+
+      //example 4) function that run twice
+      function callTwice(dice){
+        console.log(dice()); //or put the value in the variable
+        console.log(dice());
+      }
+      function rolldice(){
+        const roll = Math.floor(Math.random()*6)+1
+        return roll
+      }
+
+      //example 5) returning function
+      function makeBetweenFunc(min, max){
+        return function (num){
+          return num>=min && num<=max
+        }
+      }
+
+      //           METHODS
+      //example 6)
+      const myMath = {
+        //as a function: let swuare = function(num){}
+        square(num){return num*num},
+        double (num){return num*2}
+      }
+      //example 7)
+      const squareFig = {
+      area(side){return side*side},
+      perimeter (side){return side*4}
+      }
+
+      //example 8) this method
+      const cat = {
+        name: 'Mickey',
+        color: 'White with black spots',
+        breed: 'uknown',
+        meow() {console.log(this.name)} //in THIS object
+      }
+
+      //example 9)
+      const hen = {
+        name: 'Helen',
+        eggCount: 0,
+        layAnEgg() {this.eggCount++; return `EGG! Egg count = ${this.eggCount}`}
+      }
+
+      //try and catch
+
+      let hello = "HEY THERE!"
+      try{
+        console.log(hello.toUpperCase())
+      }
+      catch{
+        console.log('ERROR!');
+      }
+      console.log('After Try and Catch');
+
+      //example 10)
+      console.log('Example 10')
+      function yell(message){
+        try{
+          console.log(message.toUpperCase().repeat(3))
+        }
+        catch {
+          console.log("Please pass a string next time")
+        }
+      }
+
+      //example 11) default parameters
+      console.log('example 11');
+      function rollDice(numSides = 6){
+        return Math.floor(Math.random()*numSides) + 1
+      }
+
+      //example 12) spread ...
+      console.log('example 12');
+      let nums = [-9, 20, -13, 8, 6]
+      let greatest = Math.max(6,-1,7,-10)
+      let lowest = Math.min(6,-1,7,-10,5)
+
+      let animal =['cat', 'dog', 'fish']
+      let copyAnimal = [...animal]
+
+
+    </script>
+
+  </body>
+</html>
