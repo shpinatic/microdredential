@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Activity 14: JQuery</title>
+    <style media="screen">
+      .pBackground{background-color: orange; font-size: 1.5em;}
+      #addClass, #removeClass, #toggleClass{padding: 0.5em 1em; margin: 1em; color: lightgray; background-color: green; border-radius: 12px;}
+      .container{border: inset 5px gray; width: 30%; height: 200px;}
+      .circle{width:200px; height:200px; background-color: purple; padding: 3em; text-align: center; margin: 3em; border-radius: 50%;font-size: 1.1em;}
+      .rectangle{border-radius: 0%; background-color: yellow; border: dashed 10px olive;}
+
+      /*---ACTIVITY 14-----*/
+
+      .shape1{width:200px; height:200px; background-color: purple; padding: 3em; text-align: center; margin: 3em; border-radius: 50%;font-size: 1.1em;}
+      .shape2{width:200px; height:100px;text-align: center; margin: 3em; padding: 4em; background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!----ACTIVITY 14----->
+    <div class="shape1">
+    <p class=pShape1>Touch me!</p>
+    </div>
+    <div class="shape2">
+    Click me!
+    </div>
+
+
+    <!--example of dblclick, resize, and hover effect-->
+<div class="circle" id="circle">
+Mouse ver to see the hover effect. Double click to resize the window.
+</div>
+  <!---example 1--->
+<button id="addClass">ADD</button>
+<button id="removeClass">REMOVE</button>
+<button id="toggleClass">TOGGLE</button>
+<div class="container"></div>
+
+    <!---example of a click event --->
+<h1>Basic jQuery selectors</h1>
+<section id="content">
+  <p>Selectors are used to select content within a webpage</p>
+  <p>They use a very CSS-like syntax</p>
+  <ul id="list1">
+    <h3>Fruits: </h3>
+    <li class="a">Apples</li>
+    <li class="a">Orange</li>
+    <li class="b">Kiwi</li>
+    <li class="b">Grapes</li>
+  </ul>
+<div id="example">
+  <p class="a">Paragraph 1</p>
+  <p id="para1">Paragraph 2</p>
+  <p class="b">Paragraph 3</p>
+  <p id="para4">Paragraph 4</p>
+  <p id="para5"">Paragraph 5</p>
+</div>
+</section>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+
+//ACTIVITY 14!!!!!!!!!!!!!!!!!!!!!!
+var i = 0;
+$('.shape1').mouseleave(function(){
+  i += 1;
+$('.shape1').css({
+      'background-color' : changeColor
+    });
+  $('.shape1').html('<p>Mouse leaves the circle</p>' + i)
+//$(this).find('.pShape1').text( "Mouse leaves the circle " + i );
+})
+$('.shape2').click(function(){
+  i += 1;
+$('.shape2').css({
+      'background-color' : changeColor
+    });
+  $('.shape2').html('<p>Mouse clicks the rectangle</p>' + i)
+//$(this).find('.pShape1').text( "Mouse leaves the circle " + i );
+})
+function changeColor(){
+  //rgb goes from 0 to 255
+  const r = Math.floor(Math.random()*256)
+  const g = Math.floor(Math.random()*256)
+  const b = Math.floor(Math.random()*256)
+  return `rgb(${r},${g},${b})`
+}
+
+
+  //automatic ran function. double-click resize event
+  $(function(){
+    $('#circle').dblclick(fnDoubleClick);
+    $('#circle').hover(fnHover);
+    $(window).resize(fnResize);
+  })
+  function fnDoubleClick(){
+    $('#circle').toggleClass('rectangle')
+    $('#circle').html('<h3>Double-click event</h3>')
+  }
+  function fnHover(){
+    $('#circle').toggleClass('rectangle')
+    $('#circle').html('<h3>Hover event</h3>')
+  }
+  function fnResize(){
+    $('#circle').html('<h3>Hover event</h3>')
+  }
+
+  $(document).ready(function(){
+    //mouse event: mouseover or mouseleave
+    $('.container').on('mouseover', mouseEffect)
+    function mouseEffect(){
+      $('.container').toggleClass('pBackground')
+    }
+    //click events
+    $('#addClass').click(function(){
+    $('.container').addClass('pBackground')
+    })
+    $('#removeClass').click(function(){
+    $('.container').removeClass('pBackground')
+    })
+    $('#toggleClass').click(function(){
+    $('.container').toggleClass('pBackground')
+    })
+    //before and after
+    $('#example').before('/*/*/*BEFORE/*/*/*')
+    $('#example').after('/*/*AFTER/*/*/*')
+    //append AND prepend
+    $('#para4').prepend('HET THERE')
+    $('#para4').append('NEW CONTENT')
+    //change content of the elemnt
+    $('#para5').html('<p>HELLO WORLD!</p>')
+    //DOM tree selector
+    let elem =$('#para1')
+    elem.prev().css('border','10px dotted blue')
+    //advance filter container
+    $("p:contains('3')").css({'boder':'grey dashed 5px','font-family':'monotype corsiva'})
+    //descendent selectors
+    $('div > p:odd').css('background-color','orange')
+    $('ul + div').css('border', 'ridge olive 10px')
+    //EXAMPLE 1
+    $('#para1').css('border', '3px solid red')
+    $('.a').css({'color': 'magenta', 'padding': '0.5em 1em', 'background-color':'yellow'})
+  })
+
+</script>
+  </body>
+</html>
